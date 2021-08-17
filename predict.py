@@ -8,15 +8,16 @@ classifier=pickle.load(pickle_in)
 
 @st.cache()
 
-def diabetics_prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age):
+def prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age):
 	
-    diabetics_prediction = classifier.predict(
-	    [[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
+    prediction = classifier.predict(
+	 [[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
 
-    if diabetics_prediction == 0:
-        return  'Non Diabetic'
-    if diabetics_prediction == 1:
-        return 'Diabetic'
+    if prediction == 0:
+        pred =  'Non Diabetic'
+    else:
+        pred = 'Diabetic'
+    return pred
 
 def main():
 	
