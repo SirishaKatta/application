@@ -1,4 +1,4 @@
-%%writefile Diabetic_pred.py
+#%%writefile Diabetic_pred.py
 import numpy as np
 import pickle
 import pandas as pd
