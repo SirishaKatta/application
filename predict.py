@@ -13,10 +13,9 @@ def diabetics_prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Ins
     prediction = classifier.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
 
     if prediction == 0:
-        pred = 'Nondiabetic'
-    else:
-        pred = 'Diabetic'
-    return pred
+        return  'Diabetic'
+    if prediction==1
+        return 'Non Diabetic'
 
 def main():
 	
