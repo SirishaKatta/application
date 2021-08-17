@@ -12,7 +12,7 @@ def diabetics_prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Ins
     if prediction == 0:
         pred = 'Non diabetic'
     else:
-        pred = 'iabetic'
+        pred = 'Diabetic'
     return pred
 
 def main():
