@@ -4,8 +4,6 @@ import pandas as pd
 import streamlit as st
 from sklearn.preprocessing import StandardScaler
 
-sc = StandardScaler()
-
 pickle_in = open('model_pickle.pkl', 'rb')
 classifier=pickle.load(pickle_in)
 
