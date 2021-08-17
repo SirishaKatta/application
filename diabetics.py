@@ -56,6 +56,7 @@ cls_report=classification_report(y_test,y_pred)
 print(cls_report)
 
 import pickle
-
-with open('model_pickle',"wb") as file:
-  pickle.dump(Log,file)
+filename = 'model_pickle.pkl'
+pickle.dump(Log, open(filename, 'wb'))
+#with open('model_pickle',"wb") as file:
+  #pickle.dump(Log,file)
