@@ -1,13 +1,17 @@
-#%%writefile Diabetic_pred.py
 import numpy as np
 import pickle
 import pandas as pd
 import streamlit as st
+
+@st.cache()
+
 pickle_in = open('model_pickle.pkl', 'rb')
 classifier=pickle.load(pickle_in)
 
 def diabetics_prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age):
+	
     prediction = classifier.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
+
     if prediction == 0:
         pred = 'Non diabetic'
     else:
@@ -15,13 +19,15 @@ def diabetics_prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Ins
     return pred
 
 def main():
+	
   st.title("Diabetics Predictor")
   html_temp = """
   <div style="background-color:#546beb;padding:10px">
   <h2 style="color:#93f50a;text-align:center;">Streamlit Diabetics Predictor </h2>
   </div>
   """
-  #st.markdown(html_temp, unsafe_allow_html=True)
+  st.markdown(html_temp, unsafe_allow_html=True)
+
   Pregnancies= st.number_input("Pregnancies")
   Glucose=st.number_input("Glucose")
   BloodPressure=st.number_input("BloodPressure")
