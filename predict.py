@@ -3,10 +3,10 @@ import pickle
 import pandas as pd
 import streamlit as st
 
-@st.cache()
-
 pickle_in = open('model_pickle.pkl', 'rb')
 classifier=pickle.load(pickle_in)
+
+@st.cache()
 
 def diabetics_prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age):
 	
