@@ -12,7 +12,7 @@ def diabetics_prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Ins
         pred = 'Non diabetic'
     else:
         pred = 'Diabetic'
-  return pred
+    return pred
 
 def main():
   st.title("Diabetics Predictor")
