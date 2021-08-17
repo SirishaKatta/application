@@ -36,13 +36,13 @@ def main():
   BMI=st.number_input("BMI")
   DiabetesPedigreeFunction=st.number_input("DiabetesPedigreeFunction")
   Age=st.number_input("Age")
-  result = ""
+  #result = ""
 	
   if st.button("Predict"):
       result = diabetics_prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age)
       st.success('The person is {}'.format(result))
-    #if __name__ == '__main__':
-	#app.run(debug=True)
+    if __name__ == '__main__':
+	predict.run(debug=True)
 
-if __name__ == '__main__':
-   main()
+#if __name__ == '__main__':
+   #main()
