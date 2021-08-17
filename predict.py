@@ -42,7 +42,7 @@ def main():
       input_data=(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age)
       input_data_as_numpy_array = np.asarray(input_data)
       input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
-      std_data = scaler.transform(input_data_shaped)
+      std_data = Log.transform(input_data_shaped)
       result=prediction(std_data)
       st.success('The person is {}'.format(result))
 
