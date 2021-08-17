@@ -37,7 +37,7 @@ def main():
   BMI=st.number_input("BMI")
   DiabetesPedigreeFunction=st.number_input("DiabetesPedigreeFunction")
   Age=st.number_input("Age")
-  #result = ""
+  result = ""
 	
   if st.button("Predict"):
       result = diabetics_prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age)
