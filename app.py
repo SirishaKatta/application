@@ -22,7 +22,7 @@ def main():
   </div>
   """
   #st.markdown(html_temp, unsafe_allow_html=True)
-  Pregnancies= st.number_input("Pregnancies")
+  Pregnancies= st.number_input("Preg")
   Glucose=st.number_input("Glucose")
   BloodPressure=st.number_input("BloodPressure")
   SkinThickness=st.number_input("SkinThickness")
