@@ -13,10 +13,10 @@ def prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI,
     prediction = classifier.predict(
 	 [[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
 
-    if prediction == 1:
-        pred =  'Diabetic'
+    if prediction == 0:
+        pred =  'Non Diabetic'
     else:
-        pred = 'Non Diabetic'
+        pred = 'Diabetic'
     return pred
 
 def main():
@@ -42,8 +42,8 @@ def main():
   if st.button("Predict"):
       result = prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age)
       st.success('The person is {}'.format(result))
-    #if __name__ == '__main__':
-	#predict.run(debug=True)
-
 if __name__ == '__main__':
-   main()
+  predict.run(debug=True)
+
+#if __name__ == '__main__':
+   #main()
