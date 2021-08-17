@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 import pandas as pd
 import streamlit as st
-pickle_in = open("model_pickle","rb")
+pickle_in = open("model_pickle.pkl","rb")
 classifier=pickle.load(pickle_in)
 
 def diabetics_prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age):
