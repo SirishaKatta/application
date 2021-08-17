@@ -7,8 +7,7 @@ pickle_in = open('model_pickle.pkl', 'rb')
 classifier=pickle.load(pickle_in)
 
 def diabetics_prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age):
-    prediction = classifier.predict(
-        [[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]])
+    prediction = classifier.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
     if prediction == 0:
         pred = 'Non diabetic'
     else:
