@@ -1,6 +1,6 @@
-#import numpy as np
+import numpy as np
 import pickle
-#import pandas as pd
+import pandas as pd
 import streamlit as st
 
 pickle_in = open('model_pickle.pkl', 'rb')
@@ -8,12 +8,11 @@ classifier=pickle.load(pickle_in)
 
 @st.cache()
 
-def prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age):
-	
-    prediction = classifier.predict(
-	 [[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
+#def prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age):
+def prediction(std_data):
+    prediction = classifier.predict(std_data)
 
-    if prediction == 0:
+    if (prediction[0] == 0):
         pred =  'Non Diabetic'
     else:
         pred = 'Diabetic'
@@ -40,7 +39,11 @@ def main():
   result = ""
 	
   if st.button("Predict"):
-      result = prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age)
+      input_data=(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age)
+      input_data_as_numpy_array = np.asarray(input_data)
+      input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
+      std_data = scaler.transform(input_data_shaped)
+      result=prediction(std_data)
       st.success('The person is {}'.format(result))
 
 if __name__ == '__main__':
