@@ -40,7 +40,7 @@ def main():
   result = ""
 	
   if st.button("Predict"):
-      result = diabetics_prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age)
+      result = prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age)
       st.success('The person is {}'.format(result))
     #if __name__ == '__main__':
 	#predict.run(debug=True)
