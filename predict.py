@@ -35,7 +35,7 @@ def main():
 	
   st.title("Diabetics Predictor")
   html_temp = """
-  <body bgcolor ="lightblue">
+  <body bgcolor ="#FFFFFF">
   <div style="background-color:#54c79b;padding:10px">
   <h2 style="color:#0b124d;text-align:center;">Streamlit Diabetes Predictor App </h2>
   </div>
