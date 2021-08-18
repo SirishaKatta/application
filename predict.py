@@ -45,7 +45,7 @@ def main():
   col1, mid, col2 = st.beta_columns([1,1,20])
   with title_container:
     with col1:
-       st.image('emoji image.html', width=60)
+       st.image('image.png', width=60)
     with col2:
        st.write('A Name')
 
