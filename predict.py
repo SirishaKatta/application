@@ -41,7 +41,7 @@ def main():
   """
   st.markdown(html_temp, unsafe_allow_html=True)
   st.write("a logo and text next to eachother")
-  col1, mid, col2 = st.beta_columns([1,1,20])
+  col1, mid, col2 = st.beta_columns(3)
   with col1:
     st.image('emoji image.html', width=60)
   with col2:
