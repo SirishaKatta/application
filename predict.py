@@ -35,17 +35,18 @@ def main():
 	
   st.title("Diabetics Predictor")
   html_temp = """
+  <body bgcolor ="lightblue">
   <div style="background-color:#54c79b;padding:10px">
-  <h2 style="color:#b36559;text-align:center;">Streamlit Diabetes Predictor App </h2>
+  <h2 style="color:#0b124d;text-align:center;">Streamlit Diabetes Predictor App </h2>
   </div>
   """
   st.markdown(html_temp, unsafe_allow_html=True)
-  [theme]
-  primaryColor="#F63366"
-  backgroundColor="#FFFFFF"
-  secondaryBackgroundColor="#F0F2F6"
-  textColor="#262730"
-  font="sans serif"
+  #[theme]
+  #primaryColor="#F63366"
+  #backgroundColor="#FFFFFF"
+  #secondaryBackgroundColor="#F0F2F6"
+  #textColor="#262730"
+  #font="sans serif"
 
   Pregnancies= st.number_input("Pregnancies")
   Glucose=st.number_input("Glucose")
