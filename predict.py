@@ -48,7 +48,9 @@ def main():
        st.image('image.png')
     #with col2:
        #st.write('A Name')
-  st.write(<p style="font-family:sans-serif; color:Green; font-size: 42px;">Want to know whether a person is diabetic or not?Lets find out!!!</p>)
+  original_title = '<p style="font-family:Courier; color:Blue; font-size: 20px;">Want to know whether a person is diabetic or not?Let us find out!!!</p>'
+  st.markdown(original_title, unsafe_allow_html=True)
+  
 
   Pregnancies= st.number_input("Pregnancies")
   Glucose=st.number_input("Glucose")
