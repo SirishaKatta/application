@@ -40,12 +40,14 @@ def main():
   </div>
   """
   st.markdown(html_temp, unsafe_allow_html=True)
+  title_container = st.beta_container()
   st.write("a logo and text next to eachother")
-  col1, mid, col2 = st.beta_columns(3)
-  with col1:
-    st.image('emoji image.html', width=60)
-  with col2:
-    st.write('A Name')
+  col1, mid, col2 = st.beta_columns([1,1,20])
+  with title_container:
+    with col1:
+       st.image('emoji image.html', width=60)
+    with col2:
+       st.write('A Name')
 
   Pregnancies= st.number_input("Pregnancies")
   Glucose=st.number_input("Glucose")
