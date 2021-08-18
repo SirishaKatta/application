@@ -7,7 +7,7 @@ x=df.iloc[:,0:8].values
 y=df.iloc[:,8].values
 from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2,random_state=0)
-#x_test.shape
+
 from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
 x_train=sc.fit_transform(x_train)
@@ -16,12 +16,11 @@ from sklearn.linear_model import LogisticRegression
 Log = LogisticRegression()
 Log.fit(x_train,y_train)
 
-#pickle_in = open('model_pickle.pkl', 'rb')
-#classifier=pickle.load(pickle_in)
+
 
 @st.cache()
 
-#def prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age):
+
 def prediction(std_data):
     prediction = Log.predict(std_data)
 
@@ -37,16 +36,10 @@ def main():
   html_temp = """
   <body bgcolor ="#FFFFFF">
   <div style="background-color:#54c79b;padding:10px">
-  <h2 style="color:#0b124d;text-align:center;">Streamlit Diabetes Predictor App </h2>
+  <h2 style="color:#0b124d;text-align:center;"><b>Streamlit Diabetes Predictor App </b></h2>
   </div>
   """
   st.markdown(html_temp, unsafe_allow_html=True)
-  #[theme]
-  #primaryColor="#F63366"
-  #backgroundColor="#FFFFFF"
-  #secondaryBackgroundColor="#F0F2F6"
-  #textColor="#262730"
-  #font="sans serif"
 
   Pregnancies= st.number_input("Pregnancies")
   Glucose=st.number_input("Glucose")
