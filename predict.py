@@ -46,11 +46,11 @@ def main():
   col1, col2, col3 = st.beta_columns([1,6,1])
   with title_container:
      with col1:
-	 st.write("")
+      st.write("")
      with col2:
-         st.image('image.png')
+      st.image('image.png')
      with col3:
-	  st.write("")
+      st.write("")
   original_title = '<p style="font-family:Courier; color:Blue; font-size: 35px;">Let us find out!!!</p>'
   st.markdown(original_title, unsafe_allow_html=True)
   
