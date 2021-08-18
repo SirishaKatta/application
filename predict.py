@@ -7,7 +7,7 @@ x=df.iloc[:,0:8].values
 y=df.iloc[:,8].values
 from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2,random_state=0)
-x_test.shape
+#x_test.shape
 from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
 x_train=sc.fit_transform(x_train)
@@ -35,11 +35,17 @@ def main():
 	
   st.title("Diabetics Predictor")
   html_temp = """
-  <div style="background-color:#546beb;padding:10px">
-  <h2 style="color:#93f50a;text-align:center;">Streamlit Diabetics Predictor </h2>
+  <div style="background-color:#54c79b;padding:10px">
+  <h2 style="color:#b36559;text-align:center;">Streamlit Diabetes Predictor App </h2>
   </div>
   """
   st.markdown(html_temp, unsafe_allow_html=True)
+  [theme]
+  primaryColor="#F63366"
+  backgroundColor="#FFFFFF"
+  secondaryBackgroundColor="#F0F2F6"
+  textColor="#262730"
+  font="sans serif"
 
   Pregnancies= st.number_input("Pregnancies")
   Glucose=st.number_input("Glucose")
