@@ -40,7 +40,7 @@ def main():
   </div>
   """
   st.markdown(html_temp, unsafe_allow_html=True)
-  title = '<p style="font-family:Courier; color:Blue; font-size: 26px;"><b>Want to know whether a person is diabetic or not?</b></p>'
+  title = '<p style="font-family:Courier; color:Pink; font-size: 26px;"><b>Want to know whether a person is diabetic or not?</b></p>'
   st.markdown(title, unsafe_allow_html=True)
   title_container = st.beta_container()
   col1, col2, col3 = st.beta_columns([1,6,1])
@@ -51,7 +51,7 @@ def main():
       st.image('image.png')
      with col3:
       st.write("")
-  original_title = '<p style="font-family:Courier; color:Blue; font-size: 26px;align:right;"><b>Let us find out!!!</b></p>'
+  original_title = '<p style="font-family:Courier; color:MediumSeaGreen; font-size: 26px;align:right;"><b>Let us find out!!!</b></p>'
   st.markdown(original_title, unsafe_allow_html=True)
   
 
