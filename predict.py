@@ -41,13 +41,14 @@ def main():
   """
   st.markdown(html_temp, unsafe_allow_html=True)
   title_container = st.beta_container()
-  st.write("a logo and text next to eachother")
+  
   col1, mid, col2 = st.beta_columns([1,1,20])
   with title_container:
     with col1:
-       st.image('image.png', width=60)
-    with col2:
-       st.write('A Name')
+       st.image('image.png')
+    #with col2:
+       #st.write('A Name')
+  st.write(<p style="font-family:sans-serif; color:Green; font-size: 42px;">Want to know whether a person is diabetic or not?Lets find out!!!</p>)
 
   Pregnancies= st.number_input("Pregnancies")
   Glucose=st.number_input("Glucose")
