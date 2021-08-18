@@ -54,9 +54,30 @@ from sklearn.metrics import classification_report
 cls_report=classification_report(y_test,y_pred)
 
 print(cls_report)
+input_data=(6,148,72,35,0,33.6,0.627,50)   
+input_data_as_numpy_array = np.asarray(input_data)
+input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
+std_data = sc.transform(input_data_reshaped)
+print(std_data)
+prediction=Log.predict(std_data)
+print(prediction)
+if (prediction[0] == 0):
+        print('The person is Non Diabetic')
+else:
+        print('The person is Diabetic')
+ 
+input_data=(1,85,66,29,0,26.6,0.351,31)   
+input_data_as_numpy_array = np.asarray(input_data)
+input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
+std_data = sc.transform(input_data_reshaped)
+print(std_data)
+prediction=Log.predict(std_data)
+print(prediction)
+if (prediction[0] == 0):
+        print('The person is Non Diabetic')
+else:
+        print('The person is Diabetic')
 
 import pickle
 filename = 'model_pickle.pkl'
 pickle.dump(Log, open(filename, 'wb'))
-#with open('model_pickle',"wb") as file:
-  #pickle.dump(Log,file)
