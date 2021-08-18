@@ -48,7 +48,7 @@ def main():
      with col1:
       st.write("")
      with col2:
-      st.image('image.png')
+      st.image('image.png',width=50)
      with col3:
       st.write("")
   original_title = '<p style="font-family:Courier; color:#47064f; font-size: 26px;align:right;"><b>Let us find out!!!</b></p>'
