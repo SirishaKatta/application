@@ -2,16 +2,26 @@ import numpy as np
 import pickle
 import pandas as pd
 import streamlit as st
+actual_data=pd.read.csv('diabetes.csv')
+from sklearn.model_selection import train_test_split
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2,random_state=0)
+x_test.shape
 from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+x_train=sc.fit_transform(x_train)
+x_test=sc.fit_transform(x_test)
+from sklearn.linear_model import LogisticRegression
+Log = LogisticRegression()
+Log.fit(x_train,y_train)
 
-pickle_in = open('model_pickle.pkl', 'rb')
-classifier=pickle.load(pickle_in)
+#pickle_in = open('model_pickle.pkl', 'rb')
+#classifier=pickle.load(pickle_in)
 
 @st.cache()
 
 #def prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age):
 def prediction(std_data):
-    prediction = classifier.predict(std_data)
+    prediction = Log.predict(std_data)
 
     if (prediction[0] == 0):
         pred =  'Non Diabetic'
@@ -43,7 +53,7 @@ def main():
       input_data=(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age)
       input_data_as_numpy_array = np.asarray(input_data)
       input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
-      std_data = StandardScaler.transform(input_data_reshaped)
+      std_data = sc.transform(input_data_reshaped)
       result=prediction(std_data)
       st.success('The person is {}'.format(result))
 
