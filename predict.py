@@ -45,8 +45,8 @@ def main():
   title_container = st.beta_container()
   col1, col2, col3 = st.beta_columns([1,6,1])
   with title_container:
-    st.image('image.png')
-     with col1:
+    with col1:
+	st.image('image.png')
       #st.write("")
      #with col2:
       
