@@ -2,7 +2,7 @@ import numpy as np
 import pickle
 import pandas as pd
 import streamlit as st
-actual_data=pd.read_csv('diabetes.csv')
+df=pd.read_csv('diabetes.csv')
 x=df.iloc[:,0:8].values
 y=df.iloc[:,8].values
 from sklearn.model_selection import train_test_split
